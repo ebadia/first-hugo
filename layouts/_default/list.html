@@ -1,0 +1,16 @@
+{{ define "content" }}
+<h1 class="title">{{ .Title }}</h1>
+
+<div>
+  {{ .Content}}
+</div>
+
+<div>
+  Check our Blog:
+  <div>
+    {{ range where .Site.RegularPages "Type" "blog_posts"}}
+    <a class="navbar-item" href="{{ .Permalink }}"> {{ .Title }}</a>
+    {{ end}}
+  </div>
+</div>
+{{ end }}
